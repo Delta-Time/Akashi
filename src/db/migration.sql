@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS "users" (
+    "id" SERIAL PRIMARY KEY,
+    "username" VARCHAR(255) NOT NULL,
+    "password" VARCHAR(255) NOT NULL,
+    "jwt_sub" VARCHAR(255),
+    "updated_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS "private_keys" (
+    "id" SERIAL PRIMARY KEY,
+    "key" TEXT NOT NULL,
+    "expired_at" TIMESTAMP,
+    "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
