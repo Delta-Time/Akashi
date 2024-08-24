@@ -19,6 +19,9 @@
     "migrate": "bun run src/consoles/migrate.ts",
     "keymake": "bun run src/consoles/keymake.ts",
     "makeuser": "bun run src/consoles/makeuser.ts",
+    "makeapp": "bun run src/consoles/makeapp.ts",
+    "makerole": "bun run src/consoles/makerole.ts",
+    "assignrole": "bun run src/consoles/assignrole.ts",
     "start": "bun run index.ts",
     "lint": "eslint 'src/**/*.{js,ts}'",
     "format": "prettier --write 'src/**/*.{js,ts}'"

@@ -4,6 +4,9 @@ import { dbClient } from '../db';
 import { users } from '../db/schema/users';
 import { eq } from 'drizzle-orm';
 import { sign } from 'jsonwebtoken';
+import { roles } from '../db/schema/roles';
+import { roleUsers } from '../db/schema/roleUsers';
+import { apps } from '../db/schema/apps';
 
 const jwtIssue = async (userId: number): Promise<string> => {
   const secret = await getPrivateKey();
@@ -27,10 +30,35 @@ const jwtIssue = async (userId: number): Promise<string> => {
     .set({ jwtSub: uuid })
     .where(eq(users.id, user.id));
 
+  const role = await dbClient
+    .select({
+      appCode: apps.code,
+      roleCode: roles.code,
+    })
+    .from(roleUsers)
+    .leftJoin(roles, eq(roleUsers.roleId, roles.id))
+    .leftJoin(apps, eq(roles.appId, apps.id))
+    .leftJoin(users, eq(roleUsers.userId, users.id))
+    .execute();
+
+  const roleSet = role.reduce(
+    (acc, curr) => {
+      if (curr.appCode !== null) {
+        if (!acc[curr.appCode]) {
+          acc[curr.appCode] = [];
+        }
+        acc[curr.appCode].push(curr.roleCode ?? 'unknown');
+      }
+      return acc;
+    },
+    {} as Record<string, string[]>,
+  );
+
   const payload = {
     username: user.username,
     sub: uuid,
     jwt_version: process.env.JWT_VERSION ?? 'unknown',
+    role: roleSet,
   };
 
   const token = sign(payload, secret);
