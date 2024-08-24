@@ -28,7 +28,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/akashi-auth:latest
+          tags: ghcr.io/${{ github.repository_owner | toLowerCase }}/akashi-auth:latest
+
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
