@@ -8,5 +8,5 @@ const runMigration = async (filePath: string) => {
   console.log('Migrate OK.');
 };
 
-runMigration('src/db/migration.sql');
+await runMigration('src/db/migration.sql');
 process.exit(0);
