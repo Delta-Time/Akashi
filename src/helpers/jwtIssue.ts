@@ -39,6 +39,7 @@ const jwtIssue = async (userId: number): Promise<string> => {
     .leftJoin(roles, eq(roleUsers.roleId, roles.id))
     .leftJoin(apps, eq(roles.appId, apps.id))
     .leftJoin(users, eq(roleUsers.userId, users.id))
+    .where(eq(users.id, user.id))
     .execute();
 
   const roleSet = role.reduce(
