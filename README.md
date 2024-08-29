@@ -1,4 +1,12 @@
+## badges
+
 [![Docker Image CI](https://github.com/Delta-Time/Akashi/actions/workflows/docker-image.yml/badge.svg?branch=master)](https://github.com/Delta-Time/Akashi/actions/workflows/docker-image.yml)
+
+## image
+
+プライベート:
+
+`https://github.com/users/Delta-Time/packages/container/package/akashi-auth`
 
 ## Commands
 
