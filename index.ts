@@ -20,3 +20,5 @@ app.all("/:table(users|apps|roles)/:action(list|create|read|update|delete)/:id?"
 app.listen(port, () =>{
   console.log(`Server is running on http://localhost:${port}`);
 })
+
+export default app;
