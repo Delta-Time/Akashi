@@ -5,8 +5,7 @@
 ## image
 
 プライベート:
-
-`https://github.com/users/Delta-Time/packages/container/package/akashi-auth`
+https://github.com/users/Delta-Time/packages/container/package/akashi-auth
 
 ## Commands
 
