@@ -1,4 +1,4 @@
-import { pgTable, bigint, foreignKey, integer } from 'drizzle-orm/pg-core';
+import { pgTable, integer } from 'drizzle-orm/pg-core';
 import { roles } from './roles';
 import { users } from './users';
 

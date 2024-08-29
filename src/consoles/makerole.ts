@@ -1,10 +1,7 @@
 import { keyInSelect, question } from 'readline-sync';
 import { dbClient } from '../db';
-import { users } from '../db/schema/users';
 import { and, eq } from 'drizzle-orm';
-import { hash } from 'argon2';
 import { apps } from '../db/schema/apps';
-import { ExitStatus } from 'typescript';
 import { roles } from '../db/schema/roles';
 
 console.clear();

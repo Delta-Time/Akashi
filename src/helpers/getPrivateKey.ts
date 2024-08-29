@@ -7,6 +7,7 @@ const getPrivateKey = async () => {
     .select()
     .from(privateKeys)
     .where(isNull(privateKeys.expiredAt))
+    .orderBy(privateKeys.createdAt)
     .limit(1);
   if (keys.length != 1) {
     throw new Error('秘密鍵が設定されていません');
