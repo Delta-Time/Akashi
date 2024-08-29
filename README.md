@@ -1,3 +1,5 @@
+[![Docker Image CI](https://github.com/Delta-Time/Akashi/actions/workflows/docker-image.yml/badge.svg?branch=master)](https://github.com/Delta-Time/Akashi/actions/workflows/docker-image.yml)
+
 ## Commands
 
 ### `bun run migrate`
