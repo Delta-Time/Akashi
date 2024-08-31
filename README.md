@@ -2,6 +2,13 @@
 
 [![Docker Image CI](https://github.com/Delta-Time/Akashi/actions/workflows/docker-image.yml/badge.svg?branch=master)](https://github.com/Delta-Time/Akashi/actions/workflows/docker-image.yml)
 
+## API Document
+
+- docker-compose の swagger-ui を上げる: `docker compose up swagger-ui`
+- ブラウザアクセス: http://localhost:3939/
+
+- （プロジェクトルートにあるopenapi.json見てもいいけど人間の読むものじゃない感）
+
 ## image
 
 プライベート:
